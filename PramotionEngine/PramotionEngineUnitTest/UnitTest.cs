@@ -7,6 +7,34 @@ namespace PramotionEngineUnitTest
     [TestClass]
     public class UnitTest
     {
+
+        [TestMethod]
+        public void ThreeA()
+        {
+            //Mention quantity of SKU ID's(Products) in order A,B,C,D
+            ShoppingClass obj = new ShoppingClass();
+            double result = obj.ShoppingCart(3, 0, 0, 0);
+            Assert.AreEqual(130, result);
+        }
+
+        [TestMethod]
+        public void TwoB()
+        {
+            //Mention quantity of SKU ID's(Products) in order A,B,C,D
+            ShoppingClass obj = new ShoppingClass();
+            double result = obj.ShoppingCart(0, 2, 0, 0);
+            Assert.AreEqual(45, result);
+        }
+
+        [TestMethod]
+        public void CPlusD()
+        {
+            //Mention quantity of SKU ID's(Products) in order A,B,C,D
+            ShoppingClass obj = new ShoppingClass();
+            double result = obj.ShoppingCart(0, 0, 1, 1);
+            Assert.AreEqual(30, result);
+        }
+
         [TestMethod]
         public void ScenarioA()
         {

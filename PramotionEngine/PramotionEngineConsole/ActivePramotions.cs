@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PramotionEngineConsole
 {
-    class ActivePramotions : Products
+    public class ActivePramotions : Products
     {
         public int ThreeAGroup { get; set; } = 3;
         public int TwoBGroup { get; set; } = 2;
@@ -13,11 +13,15 @@ namespace PramotionEngineConsole
 
 
     //Pramotion A
-    public class ThreeAPramotion : ISingleProductQuantityPramotion
+    public class ThreeAPramotion : ActivePramotions, ISingleProductQuantityPramotion
     {
+        //3 of A's for 130 where actual price become 150 so there is 13.3% drop for 3
+        private readonly int ProductQuantity = 3;
+        private readonly double CurrentDiscount = 13.3;
         public double QuantityPramotion(int quantity)
         {
-            return 0;
+            Tuple<int, int> Quotient_Reminder = new GroupCounter().GetQuotientAndReminder(quantity, ProductQuantity);
+            return new DiscountCalcultor().Calculate(SKU_ID_List["A"], ProductQuantity, CurrentDiscount, Quotient_Reminder.Item1, Quotient_Reminder.Item2);
         }
     }
 
@@ -38,9 +42,5 @@ namespace PramotionEngineConsole
             return 0;
         }
     }
-
-
-
-
 
 }
