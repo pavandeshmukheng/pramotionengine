@@ -69,8 +69,8 @@ namespace PramotionEngineUnitTest
         {
             //Mention quantity of SKU ID's(Products) in order A,B,C,D
             ShoppingClass obj = new ShoppingClass();
-            double result = obj.ShoppingCart(30, 35, 10, 10);
-            Assert.AreEqual(1000, result);
+            double result = obj.ShoppingCartWithRecommendedPramotion(3, 2, 1, 1);
+            Assert.AreEqual(225, result);
         }
     }
 }

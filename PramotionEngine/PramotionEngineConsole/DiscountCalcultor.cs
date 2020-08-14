@@ -4,6 +4,7 @@ using System.Text;
 
 namespace PramotionEngineConsole
 {
+    //method overloading for Calculate function    
     public class DiscountCalcultor
     {
         public double Calculate(int productValue, int productGroup, double discountPercent, int quotient, int reminder)
@@ -25,10 +26,10 @@ namespace PramotionEngineConsole
 
             double finalSum = 0;
 
-            for (int i = 1; i <= quotient; i++)
+            for (int i = 1; i <= quotient; i++)//loop the max possible group considering group of products as one
                 finalSum = finalSum + (1 * productValue) - ((discountPercent / 100) * (1 * productValue));
 
-            for (int i = 1; i <= reminder; i++)
+            for (int i = 1; i <= reminder; i++)//loop for the remaning ons if any
                 finalSum = finalSum + productValue;
 
             finalSum = finalSum + extraAdd;
