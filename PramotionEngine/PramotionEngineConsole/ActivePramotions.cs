@@ -26,21 +26,24 @@ namespace PramotionEngineConsole
     }
 
     //Pramotion B
-    public class TwoBPramotion :  ISingleProductQuantityPramotion
+    public class TwoBPramotion : ActivePramotions, ISingleProductQuantityPramotion
     {
+        //2 of B's for 45 where actual price become 60 so there is 25% drop for 2
+        private readonly int ProductQuantity = 2;
+        private readonly double CurrentDiscount = 25;
         public double QuantityPramotion(int quantity)
         {
-            return 0;
+            Tuple<int, int> Quotient_Reminder = new GroupCounter().GetQuotientAndReminder(quantity, ProductQuantity);
+            return new DiscountCalcultor().Calculate(SKU_ID_List["B"], ProductQuantity, CurrentDiscount, Quotient_Reminder.Item1, Quotient_Reminder.Item2);
         }
     }
 
     //Pramotion C + D
-    public class CPlusDPramotion : IMultipleProductClubbPramotion
+    public class CPlusDPramotion : ActivePramotions, IMultipleProductClubbPramotion
     {
         public double ClubbPramotion(int product_C, int product_D)
         {
             return 0;
         }
     }
-
 }
