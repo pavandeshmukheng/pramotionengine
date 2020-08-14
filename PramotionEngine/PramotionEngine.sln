@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PramotionEngineConsole", "PramotionEngineConsole\PramotionEngineConsole.csproj", "{9C16CD6C-4FD4-46A2-8FD3-C71DBFF972BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PramotionEngineUnitTest", "PramotionEngineUnitTest\PramotionEngineUnitTest.csproj", "{0A4C8112-9A0D-4B11-BC71-C3189229DA14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9C16CD6C-4FD4-46A2-8FD3-C71DBFF972BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C16CD6C-4FD4-46A2-8FD3-C71DBFF972BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C16CD6C-4FD4-46A2-8FD3-C71DBFF972BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A4C8112-9A0D-4B11-BC71-C3189229DA14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A4C8112-9A0D-4B11-BC71-C3189229DA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A4C8112-9A0D-4B11-BC71-C3189229DA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A4C8112-9A0D-4B11-BC71-C3189229DA14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
