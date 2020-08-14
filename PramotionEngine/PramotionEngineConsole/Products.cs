@@ -5,7 +5,7 @@ using System.Text;
 namespace PramotionEngineConsole
 {
     //Products with fixed price SKU IDs
-    public class Products
+    public class Products : GroupCounter
     {
         public Dictionary<string, int> SKU_ID_List { get; set; }
         public Products()

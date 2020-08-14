@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PramotionEngineConsole
 {
-    public class GroupCounter
+    public abstract class GroupCounter
     {
         public Tuple<int, int> GetQuotientAndReminder(int Quantity_Dividend, int Group_Divisor)
         {

@@ -20,7 +20,7 @@ namespace PramotionEngineConsole
         private readonly double CurrentDiscount = 13.3;
         public double QuantityPramotion(int quantity)
         {
-            Tuple<int, int> Quotient_Reminder = new GroupCounter().GetQuotientAndReminder(quantity, ProductQuantity);
+            Tuple<int, int> Quotient_Reminder = GetQuotientAndReminder(quantity, ProductQuantity);
             return new DiscountCalcultor().Calculate(SKU_ID_List["A"], ProductQuantity, CurrentDiscount, Quotient_Reminder.Item1, Quotient_Reminder.Item2);
         }
     }
@@ -33,7 +33,7 @@ namespace PramotionEngineConsole
         private readonly double CurrentDiscount = 25;
         public double QuantityPramotion(int quantity)
         {
-            Tuple<int, int> Quotient_Reminder = new GroupCounter().GetQuotientAndReminder(quantity, ProductQuantity);
+            Tuple<int, int> Quotient_Reminder = GetQuotientAndReminder(quantity, ProductQuantity);
             return new DiscountCalcultor().Calculate(SKU_ID_List["B"], ProductQuantity, CurrentDiscount, Quotient_Reminder.Item1, Quotient_Reminder.Item2);
         }
     }
