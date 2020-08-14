@@ -18,5 +18,22 @@ namespace PramotionEngineConsole
 
             return finalSum;
         }
+
+        public double Calculate(int product1Value, int product2Value, int extraAdd, double discountPercent, int quotient, int reminder)
+        {
+            int productValue = product1Value + product2Value;
+
+            double finalSum = 0;
+
+            for (int i = 1; i <= quotient; i++)
+                finalSum = finalSum + (1 * productValue) - ((discountPercent / 100) * (1 * productValue));
+
+            for (int i = 1; i <= reminder; i++)
+                finalSum = finalSum + productValue;
+
+            finalSum = finalSum + extraAdd;
+
+            return finalSum;
+        }
     }
 }

@@ -41,9 +41,18 @@ namespace PramotionEngineConsole
     //Pramotion C + D
     public class CPlusDPramotion : ActivePramotions, IMultipleProductClubbPramotion
     {
-        public double ClubbPramotion(int product_C, int product_D)
+        //C and D for 30 where actual price become 35 so there is 14.28% drop if someone buy C and D in together
+        private readonly int ProductGroup = 2;
+        private readonly double CurrentDiscount = 14.28;
+        public double ClubbPramotion(int product_C_Quantity, int product_D_Quantity)
         {
-            return 0;
+            Tuple<int, int> Quotient_Reminder = GetQuotientAndReminder(product_C_Quantity + product_D_Quantity, ProductGroup);
+
+            int reminderOnTheBasisOfLargerQuantity = 0;
+            if (product_C_Quantity > product_D_Quantity) reminderOnTheBasisOfLargerQuantity = SKU_ID_List["C"];
+            if (product_C_Quantity < product_D_Quantity) reminderOnTheBasisOfLargerQuantity = SKU_ID_List["D"];
+
+            return new DiscountCalcultor().Calculate(SKU_ID_List["C"], SKU_ID_List["D"], reminderOnTheBasisOfLargerQuantity, CurrentDiscount, Quotient_Reminder.Item1, 0);
         }
     }
 }
